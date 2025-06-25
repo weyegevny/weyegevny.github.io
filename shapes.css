@@ -1,0 +1,88 @@
+body {
+  font-family: 'Roboto Mono', monospace;
+  margin: 0;
+  background: #f0f0f0;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.flatland-world {
+  perspective: 1000px;
+}
+
+section {
+  min-height: 100vh;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.5s;
+}
+
+/* Shapes */
+.square, .polygon, .cube, .line {
+  margin: 20px;
+  transition: all 0.5s ease-out;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background: #3498db;
+}
+
+.hexagon {
+  width: 100px;
+  height: 100px;
+  background: #e74c3c;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.triangle {
+  width: 100px;
+  height: 100px;
+  background: #2ecc71;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.cube {
+  width: 100px;
+  height: 100px;
+  background: #9b59b6;
+  transform-style: preserve-3d;
+}
+
+.line {
+  width: 200px;
+  height: 2px;
+  background: #333;
+}
+
+/* Interactions */
+.square:hover, .polygon:hover {
+  transform: rotateX(20deg) rotateY(20deg) scale(1.1);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+#spaceland-cube {
+  animation: spin 5s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: rotateY(0); }
+  to { transform: rotateY(360deg); }
+}
+
+/* Easter Egg */
+#escape-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
