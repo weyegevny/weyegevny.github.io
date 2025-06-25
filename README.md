@@ -1,2 +1,2 @@
 # weyegevny.github.io
-We by Yevgeny Zamyatin Novel Webpage
+A website project initally supposed to be on We by Yevgeny Zamyatin, but ended up being about Flatland.
