@@ -1,24 +1,25 @@
-// Escape Flatland Easter Egg (Works on Both Pages)
-document.getElementById('escape-button').addEventListener('click', () => {
-  document.body.style.transition = 'all 2s';
-  document.body.style.transform = 'rotateX(60deg)';
-  document.body.style.background = '#000';
-  
-  setTimeout(() => {
-    alert("You've transcended dimensions!");
-    document.body.style.transform = '';
-    document.body.style.background = '';
-  }, 2000);
-});
-
-// Hexagon Navigation (Analysis Page Only)
-if (document.querySelector('.hex-grid')) {
-  document.querySelectorAll('.hexagon:not(.back-hex)').forEach(hex => {
-    hex.addEventListener('click', () => {
-      const section = hex.getAttribute('data-section');
-      document.getElementById(section).scrollIntoView({ 
-        behavior: 'smooth' 
-      });
-    });
+// Escape Button (Works on both pages)
+const escapeBtn = document.getElementById('escape-button');
+if (escapeBtn) {
+  escapeBtn.addEventListener('click', () => {
+    document.body.style.transition = 'all 1.5s';
+    document.body.style.transform = 'rotateX(70deg)';
+    document.body.style.background = '#000';
+    setTimeout(() => {
+      alert("You've transcended dimensions!");
+      document.body.style.transform = '';
+      document.body.style.background = '';
+    }, 1500);
   });
 }
+
+// Hex Navigation (Analysis page only)
+const hexes = document.querySelectorAll('.hex:not(.home-hex)');
+hexes.forEach(hex => {
+  hex.addEventListener('click', () => {
+    const targetId = hex.getAttribute('data-target');
+    document.getElementById(targetId).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
