@@ -8,7 +8,173 @@ body {
   line-height: 1.6;
 }
 
-/* === ANALYSIS PAGE LAYOUT === */
+/* === HOME PAGE LAYOUT === */
+.simple-nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+.nav-button {
+  background: #2c3e50;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.nav-button:hover {
+  background: #34495e;
+}
+
+main {
+  max-width: 900px; /* Make it more compact as you mentioned */
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.intro, .dimension {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.intro h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+.intro .subtitle {
+  font-size: 1.2em;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.dimension h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.dimension p {
+  margin-bottom: 20px;
+}
+
+
+/* === SHAPES FOR HOME PAGE (THESE WERE MISSING OR INCOMPLETE) === */
+
+/* General shape container for Flatland */
+.shape-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Increased gap for better spacing */
+  margin-top: 20px;
+}
+
+/* Hero Square (larger) */
+#hero-square {
+  width: 150px; /* Larger size for hero */
+  height: 150px;
+  margin: 30px auto; /* Centered with more margin */
+  background: #3498db; /* Blue */
+  border: 2px solid #2980b9;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Base style for the generic 'shape' class (used in char-shape and Flatland shapes) */
+.shape {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem; /* Adjust margin for shapes in containers */
+  transition: all 0.3s;
+  display: flex; /* For potential centering of text inside if needed */
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; /* Include padding/border in element's total width and height */
+}
+
+.shape:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Individual Shape Definitions for Home Page */
+
+.square {
+  background: #3498db; /* Blue */
+}
+
+.line {
+  width: 200px; /* A horizontal line */
+  height: 5px;
+  background: #2c3e50; /* Dark gray */
+  margin: 20px auto;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #e74c3c; /* Red */
+  margin-bottom: 0; /* Adjust margin if needed for container */
+  /* Adjust hover to not mess with border */
+  transform-origin: bottom center; /* For scaling from base */
+}
+.triangle:hover {
+   transform: scale(1.1);
+   /* No box-shadow for triangle due to border-trick */
+}
+
+
+.hexagon {
+  width: 100px;
+  height: 57.735px; /* 100 / sqrt(3) */
+  background-color: #f1c40f; /* Yellow */
+  position: relative;
+  margin-bottom: 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Add shadow to main part */
+}
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+}
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 28.8675px solid #f1c40f; /* 50 * sqrt(3) / 2 */
+}
+.hexagon:after {
+  top: 100%;
+  border-top: 28.8675px solid #f1c40f;
+}
+.hexagon:hover {
+  transform: scale(1.1);
+  /* For hexagons, the shadow needs to be applied carefully or adjusted */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.cube {
+  width: 120px; /* Slightly larger cube */
+  height: 120px;
+  background: #9b59b6; /* Purple */
+  transform: rotateX(45deg) rotateY(45deg); /* Basic 3D illusion */
+  margin: 30px auto;
+  border: 2px solid #8e44ad;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+/* === ANALYSIS PAGE LAYOUT (Existing styles, adjusted some for clarity) === */
 body.analysis {
   padding-top: 20px;
 }
@@ -57,7 +223,7 @@ body.analysis {
   scroll-margin-top: 20px;
 }
 
-/* === CHARACTERS SECTION === */
+/* === CHARACTERS SECTION (Existing styles) === */
 .character-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -71,21 +237,20 @@ body.analysis {
   text-align: center;
 }
 
-.char-shape, .shape {
+.char-shape { /* Specific for character page shapes */
   width: 80px;
   height: 80px;
   margin: 0 auto 1rem;
   transition: all 0.3s;
 }
 
-.char-shape:hover, .shape:hover {
+.char-shape:hover {
   transform: scale(1.1);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Shape Styles */
-.square { background: #3498db; }
-.sphere { 
+/* Shape Styles for CHARACTERS */
+.sphere {
   background: #f1c40f;
   border-radius: 50%;
 }
@@ -95,10 +260,14 @@ body.analysis {
 }
 .equilateral {
   background: #27ae60;
+  /* This clip-path is for a hexagon, not an equilateral triangle.
+     An equilateral triangle would be simpler, like 50% 0%, 100% 100%, 0% 100%.
+     If you want a true equilateral triangle, change this.
+     If you intended a hexagon-like shape here, then it's fine for this context. */
   clip-path: polygon(50% 0%, 100% 86.6%, 75% 100%, 25% 100%, 0% 86.6%);
 }
 
-/* === WHEEL OF OPPRESSION === */
+/* === WHEEL OF OPPRESSION === (Existing styles) */
 .wheel-container {
   display: flex;
   flex-wrap: wrap;
@@ -156,17 +325,12 @@ body.analysis {
   line-height: 1.6;
 }
 
-/* === UNDERSTANDING SECTION === */
+/* === UNDERSTANDING SECTION === (Existing styles) */
 .understanding-box {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
-}
-
-.shape-container {
-  display: flex;
-  gap: 1rem;
 }
 
 .understanding-text {
@@ -176,7 +340,7 @@ body.analysis {
   line-height: 1.8;
 }
 
-/* === ESCAPE BUTTON === */
+/* === ESCAPE BUTTON === (Existing styles) */
 #escape-button {
   position: fixed;
   bottom: 20px;
@@ -197,12 +361,12 @@ body.analysis {
   transform: scale(1.05);
 }
 
-/* === RESPONSIVE ADJUSTMENTS === */
+/* === RESPONSIVE ADJUSTMENTS === (Existing styles) */
 @media (max-width: 768px) {
   .wheel-container {
-    flex-direction: column;
+      flex-direction: column;
   }
   .understanding-box {
-    flex-direction: column;
+      flex-direction: column;
   }
 }
