@@ -1,88 +1,101 @@
+/* Base Styles */
 body {
   font-family: 'Roboto Mono', monospace;
-  margin: 0;
   background: #f0f0f0;
   color: #333;
+  margin: 0;
   overflow-x: hidden;
 }
 
-.flatland-world {
-  perspective: 1000px;
-}
-
-section {
-  min-height: 100vh;
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
+/* Hexagonal Navigation */
+.hex-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 10px;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.5s;
-}
-
-/* Shapes */
-.square, .polygon, .cube, .line {
-  margin: 20px;
-  transition: all 0.5s ease-out;
-}
-
-.square {
-  width: 100px;
-  height: 100px;
-  background: #3498db;
+  margin: 2rem auto;
 }
 
 .hexagon {
-  width: 100px;
-  height: 100px;
-  background: #e74c3c;
+  width: 120px;
+  height: 104px;
+  background: #3498db;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
+.hexagon:hover {
+  transform: scale(1.1) rotate(15deg);
+  background: #2980b9;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero-shapes {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.shape {
+  width: 80px;
+  height: 80px;
+  transition: all 0.5s;
+}
+
+.square { background: #3498db; }
+.circle { 
+  background: #e74c3c; 
+  border-radius: 50%;
+}
 .triangle {
-  width: 100px;
-  height: 100px;
   background: #2ecc71;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
-.cube {
-  width: 100px;
-  height: 100px;
-  background: #9b59b6;
+.shape:hover {
+  transform: translateY(-10px) rotate(15deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Wheel of Oppression */
+.wheel-container {
+  perspective: 1000px;
+  margin: 3rem auto;
+  width: 300px;
+}
+
+.wheel {
+  width: 100%;
+  height: 300px;
+  position: relative;
   transform-style: preserve-3d;
+  animation: spin 20s infinite linear;
 }
 
-.line {
-  width: 200px;
-  height: 2px;
-  background: #333;
+.wheel-segment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
 }
 
-/* Interactions */
-.square:hover, .polygon:hover {
-  transform: rotateX(20deg) rotateY(20deg) scale(1.1);
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
-}
-
-#spaceland-cube {
-  animation: spin 5s infinite linear;
-}
-
+/* Keyframes */
 @keyframes spin {
   from { transform: rotateY(0); }
   to { transform: rotateY(360deg); }
-}
-
-/* Easter Egg */
-#escape-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px;
-  background: #333;
-  color: white;
-  border: none;
-  cursor: pointer;
 }
