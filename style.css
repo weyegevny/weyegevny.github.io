@@ -20,8 +20,8 @@ body.home {
 .simple-nav {
   padding: 1rem;
   text-align: right;
-  width: 100%; /* Ensure it spans full width */
-  box-sizing: border-box; /* Include padding in width calculation */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-button {
@@ -40,16 +40,14 @@ body.home {
 main {
   max-width: 900px; /* Limits content width */
   margin: 0 auto; /* Centers the main content */
-  padding: 20px; /* Add some padding around the main content */
+  padding: 0 20px; /* Adjust padding for more compact look, no top/bottom */
   box-sizing: border-box;
 }
 
 .intro {
-  padding: 2rem 1rem; /* Padding for the intro section */
+  padding: 2rem 0; /* Reduced horizontal padding, no background/shadow */
   margin-bottom: 40px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  /* Removed: background, border-radius, box-shadow for a more compact look */
 }
 
 .intro h1 {
@@ -64,12 +62,10 @@ main {
 }
 
 .dimension {
-  padding: 4rem 2rem; /* Generous padding for dimension sections */
+  padding: 2rem 0; /* Reduced padding for a more compact feel */
   max-width: 800px; /* Limits width within main */
   margin: 0 auto 40px auto; /* Centers and adds bottom margin */
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  /* Removed: background, border-radius, box-shadow for a more compact look */
 }
 
 .dimension h2 {
@@ -83,35 +79,38 @@ main {
 
 /* --- HOME PAGE SHAPES --- */
 
-/* Hero Square (larger and specific to intro) */
+/* Hero Square (smaller as requested) */
 #hero-square {
-  width: 150px;
-  height: 150px;
-  margin: 30px auto; /* Centered */
+  width: 100px; /* Smaller size */
+  height: 100px;
+  margin: 30px auto;
   background: #3498db;
   border: 2px solid #2980b9;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: all 0.3s; /* Add transition for consistency */
+  transition: all 0.3s;
 }
 #hero-square:hover {
-  transform: scale(1.05); /* Slight hover effect */
+  transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
-
 
 .shape-container {
   display: flex;
   justify-content: center;
-  gap: 2rem; /* Increased gap as requested */
-  margin: 2rem auto; /* Centered with margin */
+  gap: 2rem;
+  margin: 2rem auto;
 }
 
 .shape {
   width: 80px;
   height: 80px;
   transition: all 0.3s;
-  box-sizing: border-box; /* Ensures padding/border is included in width/height */
-  cursor: pointer; /* Indicate interactivity */
+  box-sizing: border-box;
+  cursor: pointer;
+  /* Ensure display flex for better centering of complex shapes like triangle/hexagon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .shape:hover {
@@ -126,12 +125,11 @@ main {
 
 .triangle {
   background: #e74c3c; /* Red */
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Equilateral triangle */
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 .triangle:hover {
   transform: scale(1.1);
-  /* For clip-path shapes, box-shadow can be tricky, often omitted or done with filters */
-  filter: brightness(1.1); /* Alternative hover for clip-path */
+  filter: brightness(1.1);
 }
 
 .hexagon {
@@ -140,32 +138,32 @@ main {
 }
 .hexagon:hover {
   transform: scale(1.1);
-  filter: brightness(1.1); /* Alternative hover for clip-path */
+  filter: brightness(1.1);
 }
 
 .cube {
   width: 80px;
   height: 80px;
-  margin: 0 auto; /* Centered in its own container if not in flex */
+  margin: 0 auto;
   background: #9b59b6; /* Purple */
-  transform: rotateX(20deg) rotateY(20deg); /* Lighter 3D effect */
-  box-shadow: 3px 3px 0 #333; /* Simple cast shadow */
+  transform: rotateX(20deg) rotateY(20deg);
+  box-shadow: 3px 3px 0 #333;
 }
 .cube:hover {
-  transform: rotateX(25deg) rotateY(25deg) scale(1.05); /* Enhanced hover */
+  transform: rotateX(25deg) rotateY(25deg) scale(1.05);
   box-shadow: 5px 5px 0 #333;
 }
 
 .line {
   width: 200px;
   height: 2px;
-  background: #333; /* Dark line */
-  margin: 0 auto; /* Centered */
+  background: #333;
+  margin: 0 auto;
 }
 
 /* === ANALYSIS PAGE LAYOUT (analysis.html) === */
 body.analysis {
-  padding-top: 20px; /* Keep existing top padding */
+  padding-top: 20px;
 }
 
 .hex-nav {
@@ -198,7 +196,7 @@ body.analysis {
   background: #2980b9;
 }
 
-.home-hex { /* Added this back for specific home hex style */
+.home-hex {
   background: #2c3e50;
 }
 
@@ -209,7 +207,7 @@ body.analysis {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  scroll-margin-top: 20px; /* Keep for scroll anchoring */
+  scroll-margin-top: 20px;
 }
 
 /* === CHARACTERS SECTION (analysis.html) === */
@@ -218,23 +216,29 @@ body.analysis {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  margin-top: 2rem; /* Keep existing margin */
+  margin-top: 2rem;
 }
 
 .character-card {
   width: 150px;
   text-align: center;
+  display: flex; /* Make card a flex container */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center horizontally within the card */
 }
 
 .char-shape {
   width: 80px;
   height: 80px;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1rem; /* Adjust margin to allow for flex centering */
   transition: all 0.3s;
-  /* Using the general .shape hover now for consistency */
+  /* Add flex properties to char-shape itself for precise centering of complex shapes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.char-shape:hover { /* Override or add to general .shape:hover if needed */
+.char-shape:hover {
   transform: scale(1.1);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
@@ -244,21 +248,20 @@ body.analysis {
   background: #f1c40f;
   border-radius: 50%;
 }
-/* Ensure these specific shapes still have dimensions if not inheriting from .char-shape */
 .isosceles {
   background: #e67e22;
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
 }
 .equilateral {
   background: #27ae60;
-  /* Check if this is the desired shape. The clip-path forms a hexagon.
-     If it should be an equilateral triangle, use: clip-path: polygon(50% 0%, 100% 100%, 0% 100%); */
+  /* This clip-path is for a hexagon, not an equilateral triangle.
+     If you want a true equilateral triangle, use: clip-path: polygon(50% 0%, 100% 100%, 0% 100%); */
   clip-path: polygon(50% 0%, 100% 86.6%, 75% 100%, 25% 100%, 0% 86.6%);
 }
 
 /* === WHEEL OF OPPRESSION (analysis.html) === */
 .wheel-container {
-  display: flex; /* Kept flex for centering */
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -270,7 +273,6 @@ body.analysis {
   width: 300px;
   height: 300px;
   position: relative;
-  /* Added to align with your new wheel definition */
 }
 
 .wedge {
@@ -283,22 +285,22 @@ body.analysis {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-radius: 50%; /* Make wedges circular */
+  border-radius: 50%;
   left: 50%;
   top: 50%;
   margin-left: -50px;
   margin-top: -50px;
   transform:
       rotate(calc(var(--i) * 60deg))
-      translate(150px) /* Increased translate for wider wheel spread */
+      translate(150px)
       rotate(calc(var(--i) * -60deg));
   transition: all 0.3s;
 }
 
-.wedge span { /* Added span for text rotation based on your new CSS */
+.wedge span {
   transform: rotate(calc(var(--i) * 60deg));
   display: inline-block;
-  width: 80px; /* Gives width for text */
+  width: 80px;
 }
 
 .wheel-scroll {
@@ -331,7 +333,7 @@ body.analysis {
   line-height: 1.8;
 }
 
-/* === QUESTIONS LIST (analysis.html - new section from your provided CSS) === */
+/* === QUESTIONS LIST (analysis.html) === */
 .questions-list {
   text-align: left;
   max-width: 600px;
@@ -351,14 +353,13 @@ body.analysis {
   cursor: pointer;
   font-family: 'Roboto Mono';
   z-index: 100;
-  transition: all 0.3s; /* Added transition for hover */
+  transition: all 0.3s;
 }
 
 #escape-button:hover {
   background: #c0392b;
-  transform: scale(1.05); /* Added hover for consistency */
+  transform: scale(1.05);
 }
-
 
 /* === RESPONSIVE ADJUSTMENTS === */
 @media (max-width: 768px) {
@@ -368,7 +369,7 @@ body.analysis {
   .understanding-box {
       flex-direction: column;
   }
-  .shape-container { /* Adjust gap for smaller screens */
+  .shape-container {
       gap: 1rem;
   }
 }
