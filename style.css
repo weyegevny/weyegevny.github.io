@@ -5,38 +5,68 @@ body {
   min-height: 100vh;
   background: #f8f8f8;
   color: #222;
+  line-height: 1.6;
 }
 
 /* === HOMEPAGE === */
 body.home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
 }
 
-.hero {
-  max-width: 600px;
-  padding: 2rem;
+.simple-nav {
+  padding: 1rem;
+  text-align: right;
 }
 
-.square {
-  width: 120px;
-  height: 120px;
-  background: #3498db;
-  margin: 2rem auto;
-  transition: all 0.5s;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 12px 24px;
+.nav-button {
+  padding: 0.5rem 1rem;
   background: #2c3e50;
   color: white;
   text-decoration: none;
   border-radius: 4px;
-  margin-top: 1rem;
+}
+
+.dimension {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.shape-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.shape {
+  width: 80px;
+  height: 80px;
+  transition: all 0.3s;
+}
+
+.square { background: #3498db; }
+.triangle { 
+  background: #e74c3c;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.hexagon {
+  background: #2ecc71;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.cube {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background: #9b59b6;
+  transform: rotateX(20deg) rotateY(20deg);
+  box-shadow: 3px 3px 0 #333;
+}
+.line {
+  width: 200px;
+  height: 2px;
+  background: #333;
+  margin: 0 auto;
 }
 
 /* === ANALYSIS PAGE === */
@@ -46,6 +76,8 @@ body.home {
   flex-wrap: wrap;
   gap: 10px;
   padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hex {
@@ -59,6 +91,8 @@ body.home {
   color: white;
   cursor: pointer;
   transition: all 0.3s;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
 .hex:hover {
@@ -75,11 +109,42 @@ body.home {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.wheel {
+/* Character Gallery */
+.character-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.character-card {
+  width: 150px;
+  text-align: center;
+}
+
+.char-shape {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+}
+
+.sphere {
+  border-radius: 50%;
+  background: #f1c40f;
+}
+
+/* Wheel of Oppression */
+.wheel-container {
+  margin: 3rem auto;
   width: 300px;
   height: 300px;
   position: relative;
-  margin: 2rem auto;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .wedge {
@@ -93,7 +158,27 @@ body.home {
   align-items: center;
   text-align: center;
   border-radius: 50%;
-  transform: rotate(calc(var(--i) * 120deg)) translate(150px) rotate(calc(var(--i) * -120deg));
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  transform: 
+    rotate(calc(var(--i) * 60deg))
+    translate(150px)
+    rotate(calc(var(--i) * -60deg));
+}
+
+.wedge span {
+  transform: rotate(calc(var(--i) * 60deg));
+  display: inline-block;
+  width: 80px;
+}
+
+/* Questions List */
+.questions-list {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* === SHARED ELEMENTS === */
@@ -109,4 +194,8 @@ body.home {
   cursor: pointer;
   font-family: 'Roboto Mono';
   z-index: 100;
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
 }

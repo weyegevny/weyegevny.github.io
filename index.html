@@ -2,18 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Flatland | Home</title>
+  <title>Flatland | Dimensions</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="home">
-  <main class="hero">
-    <h1>FLATLAND</h1>
-    <p class="subtitle">A Romance of Many Dimensions</p>
-    <div class="square"></div>
-    <a href="analysis.html" class="cta-button">Begin Analysis</a>
+  <nav class="simple-nav">
+    <a href="analysis.html" class="nav-button">Deep Analysis →</a>
+  </nav>
+
+  <main>
+    <section class="intro">
+      <h1>FLATLAND</h1>
+      <p class="subtitle">A Romance of Many Dimensions</p>
+      <div class="square" id="hero-square"></div>
+    </section>
+
+    <section class="dimension" id="lineland">
+      <h2>Lineland</h2>
+      <p>The one-dimensional world where inhabitants are lines and dots.</p>
+      <div class="line"></div>
+    </section>
+
+    <section class="dimension" id="flatland">
+      <h2>Flatland</h2>
+      <p>The rigid two-dimensional society governed by geometric hierarchy.</p>
+      <div class="shape-container">
+        <div class="square shape" title="Middle Class"></div>
+        <div class="triangle shape" title="Soldiers"></div>
+        <div class="hexagon shape" title="Priests"></div>
+      </div>
+    </section>
+
+    <section class="dimension" id="spaceland">
+      <h2>Spaceland</h2>
+      <p>The Square's revolutionary discovery of the third dimension.</p>
+      <div class="cube"></div>
+    </section>
   </main>
-  <button id="escape-button">⤓ Escape</button>
+
+  <button id="escape-button">⤓ Escape Flatland</button>
   <script src="script.js"></script>
 </body>
 </html>

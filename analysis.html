@@ -10,33 +10,96 @@
   <nav class="hex-nav">
     <div class="hex" data-target="author">Author</div>
     <div class="hex" data-target="characters">Characters</div>
+    <div class="hex" data-target="conflicts">Conflicts</div>
+    <div class="hex" data-target="questions">5 Questions</div>
+    <div class="hex" data-target="understanding">Understanding</div>
     <div class="hex" data-target="oppression">Oppression</div>
+    <div class="hex" data-target="connection">Connection</div>
     <a href="index.html" class="hex home-hex">Home</a>
   </nav>
 
-  <section id="author" class="content-panel">
-    <h2>Edwin A. Abbott</h2>
-    <p>Mathematician who critiqued Victorian society through geometry.</p>
-  </section>
+  <main>
+    <!-- Author Section -->
+    <section id="author" class="content-panel">
+      <h2>Edwin A. Abbott</h2>
+      <div class="two-column">
+        <div class="bio">
+          <p>19th-century mathematician and theologian who used geometric allegory to critique Victorian social hierarchy.</p>
+        </div>
+        <div class="timeline">
+          <div class="event">1884: Flatland published</div>
+        </div>
+      </div>
+    </section>
 
-  <section id="characters" class="content-panel">
-    <h2>Characters</h2>
-    <div class="character-grid">
-      <div class="character square-char" title="The Protagonist"></div>
-      <div class="character sphere-char" title="The Visitor"></div>
-    </div>
-  </section>
+    <!-- Characters Section -->
+    <section id="characters" class="content-panel">
+      <h2>Characters</h2>
+      <div class="character-gallery">
+        <div class="character-card">
+          <div class="square char-shape"></div>
+          <h3>The Square</h3>
+          <p>Our protagonist who discovers the third dimension</p>
+        </div>
+        <div class="character-card">
+          <div class="sphere char-shape"></div>
+          <h3>The Sphere</h3>
+          <p>3D being who visits Flatland</p>
+        </div>
+        <!-- Add more characters -->
+      </div>
+    </section>
 
-  <section id="oppression" class="content-panel">
-    <h2>Wheel of Oppression</h2>
-    <div class="wheel">
-      <div class="wedge" style="--i:0">Women = Lines</div>
-      <div class="wedge" style="--i:1">Color Taboo</div>
-      <div class="wedge" style="--i:2">Shape Hierarchy</div>
-    </div>
-  </section>
+    <!-- Conflicts Section -->
+    <section id="conflicts" class="content-panel">
+      <h2>Central Conflicts</h2>
+      <div class="conflict-grid">
+        <div class="conflict">
+          <h3>Person vs Society</h3>
+          <p>The Square's ideas challenge Flatland's rigid hierarchy</p>
+        </div>
+        <div class="conflict">
+          <h3>Person vs Cosmos</h3>
+          <p>Struggle to comprehend higher dimensions</p>
+        </div>
+      </div>
+    </section>
 
-  <button id="escape-button">⤓ Escape</button>
+    <!-- 5 Essential Questions -->
+    <section id="questions" class="content-panel">
+      <h2>5 Essential Questions</h2>
+      <ol class="questions-list">
+        <li>Can a 2D being truly comprehend 3D space?</li>
+        <li>Is rebellion against an oppressive system justified?</li>
+        <li>How does shape determine social status in Flatland?</li>
+        <li>What parallels exist between Flatland and our society?</li>
+        <li>Why is the Sphere unable to imagine 4D space?</li>
+      </ol>
+    </section>
+
+    <!-- Wheel of Oppression -->
+    <section id="oppression" class="content-panel">
+      <h2>Wheel of Oppression</h2>
+      <div class="wheel-container">
+        <div class="wheel">
+          <div class="wedge" style="--i:0"><span>Women = Lines</span></div>
+          <div class="wedge" style="--i:1"><span>Color = Taboo</span></div>
+          <div class="wedge" style="--i:2"><span>Irregulars = Destroyed</span></div>
+          <div class="wedge" style="--i:3"><span>Shape = Status</span></div>
+          <div class="wedge" style="--i:4"><span>Vision = Control</span></div>
+          <div class="wedge" style="--i:5"><span>Change = Heresy</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal Connection -->
+    <section id="connection" class="content-panel">
+      <h2>Personal Connection</h2>
+      <p>Like the Square, I've experienced the challenge of explaining new perspectives to those entrenched in their worldview...</p>
+    </section>
+  </main>
+
+  <button id="escape-button">⤓ Escape Flatland</button>
   <script src="script.js"></script>
 </body>
 </html>
