@@ -2,35 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Flatland Analysis</title>
+  <title>Flatland: Dimensional Analysis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="detailed.css">
 </head>
 <body>
   <nav class="hex-grid">
-    <div class="hexagon" data-page="author"><span>Author</span></div>
-    <div class="hexagon" data-page="characters"><span>Characters</span></div>
-    <div class="hexagon" data-page="setting"><span>Setting</span></div>
-    <div class="hexagon" data-page="conflicts"><span>Conflicts</span></div>
-    <div class="hexagon" data-page="symbols"><span>Symbols</span></div>
-    <div class="hexagon" data-page="questions"><span>5 Questions</span></div>
-    <div class="hexagon" data-page="understanding"><span>Enduring Understanding</span></div>
-    <div class="hexagon" data-page="oppression"><span>Wheel of Oppression</span></div>
+    <div class="hexagon" data-section="author"><span>Author</span></div>
+    <div class="hexagon" data-section="characters"><span>Characters</span></div>
+    <div class="hexagon" data-section="setting"><span>Setting</span></div>
+    <div class="hexagon" data-section="conflicts"><span>Conflicts</span></div>
+    <div class="hexagon" data-section="symbols"><span>Symbols</span></div>
+    <div class="hexagon" data-section="understanding"><span>Understanding</span></div>
+    <div class="hexagon" data-section="oppression"><span>Oppression</span></div>
+    <a href="index.html" class="hexagon back-hex"><span>← Home</span></a>
   </nav>
 
-  <section id="author">
-          <h2>Edwin A. Abbott</h2>
+  <main>
+    <!-- Author Section -->
+    <section id="author" class="content-section">
+      <h2>Edwin A. Abbott</h2>
       <div class="two-column">
         <div class="bio">
-          <p>Mathematician and theologian who critiqued Victorian social hierarchy...</p>
+          <p>Mathematician and theologian who critiqued Victorian social hierarchy through geometric allegory.</p>
         </div>
         <div class="timeline">
-          <div class="timeline-event">1884: Flatland published</div>
+          <div class="timeline-event">1884: Publishes Flatland</div>
         </div>
       </div>
-  </section>
+    </section>
 
-  <!-- Other sections... -->
+    <!-- Wheel of Oppression -->
+    <section id="oppression" class="content-section">
+      <h2>Wheel of Oppression</h2>
+      <div class="wheel">
+        <div class="wheel-segment" data-degree="0"><span>Women = Lines</span></div>
+        <div class="wheel-segment" data-degree="51"><span>Color Taboo</span></div>
+        <!-- Add more segments -->
+      </div>
+    </section>
+  </main>
 
-  <a href="index.html" class="back-button">← Back to Main</a>
+  <button id="escape-button">Escape Flatland</button>
+  <script src="script.js"></script>
 </body>
 </html>
