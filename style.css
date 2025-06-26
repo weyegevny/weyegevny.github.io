@@ -107,7 +107,6 @@ main {
   transition: all 0.3s;
   box-sizing: border-box;
   cursor: pointer;
-  /* Ensure display flex for better centering of complex shapes like triangle/hexagon */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,11 +145,14 @@ main {
   height: 80px;
   margin: 0 auto;
   background: #9b59b6; /* Purple */
-  transform: rotateX(20deg) rotateY(20deg);
+  transform: rotateX(20deg) rotateY(20deg); /* Initial 3D perspective */
   box-shadow: 3px 3px 0 #333;
+  /* ADDED FOR CONTINUOUS ROTATION */
+  animation: cubeRotate 10s linear infinite; /* 10s duration, linear speed, repeats forever */
 }
 .cube:hover {
-  transform: rotateX(25deg) rotateY(25deg) scale(1.05);
+  animation-play-state: paused; /* Pause animation on hover if you like */
+  transform: rotateX(20deg) rotateY(20deg) scale(1.05); /* Keep initial hover scale, but preserve base rotation */
   box-shadow: 5px 5px 0 #333;
 }
 
@@ -160,6 +162,17 @@ main {
   background: #333;
   margin: 0 auto;
 }
+
+/* --- Keyframes for Cube Rotation --- */
+@keyframes cubeRotate {
+  from {
+      transform: rotateX(20deg) rotateY(20deg) rotateZ(0deg); /* Start with initial perspective */
+  }
+  to {
+      transform: rotateX(20deg) rotateY(20deg) rotateZ(360deg); /* Rotate 360 degrees on Z-axis */
+  }
+}
+
 
 /* === ANALYSIS PAGE LAYOUT (analysis.html) === */
 body.analysis {
@@ -222,17 +235,16 @@ body.analysis {
 .character-card {
   width: 150px;
   text-align: center;
-  display: flex; /* Make card a flex container */
-  flex-direction: column; /* Stack children vertically */
-  align-items: center; /* Center horizontally within the card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .char-shape {
   width: 80px;
   height: 80px;
-  margin: 0 auto 1rem; /* Adjust margin to allow for flex centering */
+  margin: 0 auto 1rem;
   transition: all 0.3s;
-  /* Add flex properties to char-shape itself for precise centering of complex shapes */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -254,8 +266,6 @@ body.analysis {
 }
 .equilateral {
   background: #27ae60;
-  /* This clip-path is for a hexagon, not an equilateral triangle.
-     If you want a true equilateral triangle, use: clip-path: polygon(50% 0%, 100% 100%, 0% 100%); */
   clip-path: polygon(50% 0%, 100% 86.6%, 75% 100%, 25% 100%, 0% 86.6%);
 }
 
