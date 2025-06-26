@@ -2,78 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flatland: A Dimensional Study</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>Flatland</title>
+  <link rel="stylesheet" href="compact.css">
 </head>
 <body>
-  <!-- Hexagonal Navigation -->
-  <nav class="hex-grid">
-    <div class="hexagon" data-page="author"><span>Author</span></div>
-    <div class="hexagon" data-page="characters"><span>Characters</span></div>
-    <div class="hexagon" data-page="setting"><span>Setting</span></div>
-    <div class="hexagon" data-page="conflicts"><span>Conflicts</span></div>
-    <div class="hexagon" data-page="symbols"><span>Symbols</span></div>
-    <div class="hexagon" data-page="questions"><span>5 Questions</span></div>
-    <div class="hexagon" data-page="understanding"><span>Enduring Understanding</span></div>
-    <div class="hexagon" data-page="oppression"><span>Wheel of Oppression</span></div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero">
-    <h1>FLATLAND</h1>
-    <p class="subtitle">A Romance of Many Dimensions</p>
-    <div class="hero-shapes">
-      <div class="square shape"></div>
-      <div class="circle shape"></div>
-      <div class="triangle shape"></div>
-    </div>
-  </header>
-
-  <!-- Main Content Sections -->
-  <main>
-    <!-- Author Section -->
-    <section id="author" class="content-section">
-      <h2>Edwin A. Abbott</h2>
-      <div class="two-column">
-        <div class="bio">
-          <p>Mathematician and theologian who critiqued Victorian social hierarchy...</p>
-        </div>
-        <div class="timeline">
-          <div class="timeline-event">1884: Flatland published</div>
-        </div>
-      </div>
+  <div class="flatland-world">
+    <section class="intro">
+      <h1>Flatland</h1>
+      <p>A Romance of Many Dimensions</p>
+      <div class="square" id="hero-square"></div>
     </section>
 
-    <!-- Characters Section -->
-    <section id="characters" class="content-section">
-      <h2>Characters</h2>
-      <div class="character-gallery">
-        <div class="character hexagon" data-char="priest">
-          <div class="tooltip">Priest Class: Hexagons</div>
-        </div>
-        <!-- More characters -->
-      </div>
-    </section>
-
-    <!-- Wheel of Oppression -->
-    <section id="oppression" class="content-section">
-      <h2>Wheel of Oppression</h2>
-      <div class="wheel-container">
-        <div class="wheel">
-          <div class="wheel-segment" data-issue="gender">
-            <span>Women = Lines</span>
-          </div>
-          <!-- More segments -->
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Easter Egg -->
-  <button id="escape-button">ESCAPE FLATLAND</button>
-
+    <nav class="simple-nav">
+      <a href="analysis.html" class="nav-button">Deeper Analysis →</a>
+    </nav>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

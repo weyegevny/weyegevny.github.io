@@ -1,0 +1,16 @@
+/* Hexagonal grid styles */
+.hex-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.hexagon {
+  width: 120px;
+  height: 104px;
+  background: #3498db;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Keep the rest of your detailed styles separate */
