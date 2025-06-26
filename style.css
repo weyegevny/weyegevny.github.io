@@ -47,6 +47,7 @@ main {
 .intro {
   padding: 2rem 0; /* Reduced horizontal padding, no background/shadow */
   margin-bottom: 40px;
+  /* Removed: background, border-radius, box-shadow for a more compact look */
 }
 
 .intro h1 {
@@ -64,6 +65,7 @@ main {
   padding: 2rem 0; /* Reduced padding for a more compact feel */
   max-width: 800px; /* Limits width within main */
   margin: 0 auto 40px auto; /* Centers and adds bottom margin */
+  /* Removed: background, border-radius, box-shadow for a more compact look */
 }
 
 .dimension h2 {
@@ -99,13 +101,13 @@ main {
   margin: 2rem auto;
 }
 
-.shape { /* General shape styles for both index.html and analysis.html (where .shape is used) */
+.shape {
   width: 80px;
   height: 80px;
   transition: all 0.3s;
   box-sizing: border-box;
   cursor: pointer;
-  display: flex; /* Crucial for centering inner content of complex shapes */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -120,7 +122,7 @@ main {
   background: #3498db; /* Blue */
 }
 
-.triangle { /* Used on index.html, e.g., for Soldiers */
+.triangle {
   background: #e74c3c; /* Red */
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
@@ -129,7 +131,7 @@ main {
   filter: brightness(1.1);
 }
 
-.hexagon { /* Used on index.html (Priests) AND now in understanding section */
+.hexagon {
   background: #2ecc71; /* Green */
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
@@ -145,11 +147,12 @@ main {
   background: #9b59b6; /* Purple */
   transform: rotateX(20deg) rotateY(20deg); /* Initial 3D perspective */
   box-shadow: 3px 3px 0 #333;
+  /* ADDED FOR CONTINUOUS ROTATION */
   animation: cubeRotate 10s linear infinite; /* 10s duration, linear speed, repeats forever */
 }
 .cube:hover {
-  animation-play-state: paused;
-  transform: rotateX(20deg) rotateY(20deg) scale(1.05);
+  animation-play-state: paused; /* Pause animation on hover if you like */
+  transform: rotateX(20deg) rotateY(20deg) scale(1.05); /* Keep initial hover scale, but preserve base rotation */
   box-shadow: 5px 5px 0 #333;
 }
 
@@ -234,15 +237,15 @@ body.analysis {
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the shape and text within the card */
+  align-items: center;
 }
 
-.char-shape { /* Specific for character page shapes */
+.char-shape {
   width: 80px;
   height: 80px;
   margin: 0 auto 1rem;
   transition: all 0.3s;
-  display: flex; /* Ensures inner content (like clip-paths) are centered */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -259,13 +262,12 @@ body.analysis {
 }
 .isosceles {
   background: #e67e22;
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* This is correct for isosceles triangle */
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
 }
-.equilateral { /* Updated to be a true equilateral triangle, as per its name */
+.equilateral {
   background: #27ae60;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Corrected clip-path for an equilateral triangle */
+  clip-path: polygon(50% 0%, 100% 86.6%, 75% 100%, 25% 100%, 0% 86.6%);
 }
-
 
 /* === WHEEL OF OPPRESSION (analysis.html) === */
 .wheel-container {
