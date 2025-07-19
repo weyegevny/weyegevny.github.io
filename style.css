@@ -261,8 +261,8 @@ body.analysis {
   border-radius: 50%;
 }
 .isosceles {
-  width: 200px; /* or any width */
-  height: 100px; /* controls triangle height */
+  width: 50px;
+  height: 100px;
   background: #e67e22;
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
 }
