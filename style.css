@@ -262,7 +262,7 @@ body.analysis {
 }
 .isosceles {
   background: #e67e22;
-  clip-path: polygon(50% 0%, 125% 125%, 0% 100%);
+  clip-path: polygon(50% 0%, 10% 10%, 0% 100%);
 }
 .equilateral {
   background: #27ae60;
